@@ -2,16 +2,14 @@ import UIKit
 
 class mainvc: UITableViewController {
 
-    
     var animals: [Strayanimal] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
     }
 
     func fetchData() {
-        let urlString = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=f4a75ba9-7721-4363-884d-c3820b0b917c&"
+        let urlString = "http://data.coa.gov.tw/Service/OpenData/AnimalOpenData.aspx"
         let url = URL(string: urlString)
         let request = URLRequest(url: url!)
         let session = URLSession.shared
@@ -20,20 +18,17 @@ class mainvc: UITableViewController {
                 print(error.debugDescription)
             } else {
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any] {
-                        if let resultData = json["result"] as? [String: Any] {
-                            if let resultsData = resultData["results"] as? [[String: Any]] {
-                                for dataPoint in resultsData {
-                                    if let animalObject = try? Strayanimal(json: dataPoint) {
-                                        print(animalObject)
-                                        self.animals.append(animalObject)
-                                    }
-                                }
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [[String: Any]] {
+                        for alldata in json {
+                            if let animalObject = try? Strayanimal(json: alldata) {
+                                self.animals.append(animalObject)
+//                                print(self.animals)
                             }
                         }
+
                     }
                     
-                } catch  {
+                } catch {
                     print("jsonErr")
                 }
                 DispatchQueue.main.async {
@@ -45,11 +40,11 @@ class mainvc: UITableViewController {
     }
   
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return animals.count
@@ -59,8 +54,8 @@ class mainvc: UITableViewController {
         let cellid = "cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid)!
         let animal = animals[indexPath.row]
-        cell.textLabel?.text = animal.name
-        cell.detailTextLabel?.text = animal.type
+        cell.textLabel?.text = animal.kind
+        cell.detailTextLabel?.text = animal.sex
         return cell
     }
     

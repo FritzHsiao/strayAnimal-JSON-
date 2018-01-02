@@ -10,7 +10,7 @@ class detailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = animals.name
+        self.title = animals.kind
         let url = URL(string: animals.imageName!)
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             guard let data = data, error == nil else {
@@ -21,8 +21,8 @@ class detailVC: UIViewController {
             }
         }
         task.resume()
-        
-        let text = "Name: \(animals.name!)\nSex: \(animals.sex!)\nType: \(animals.type!)\nAge: \(animals.age!)\nVariety: \(animals.variety!)\nNote: \(animals.note!)\n"
+
+        let text = "Sex: \(animals.sex!)\nType: \(animals.kind!)\nAge: \(animals.age!)\nShelter: \(animals.shelterName!)\nAddress: \(animals.shelterAddress!)\n"
         tvdetail.text! = text
         
     }

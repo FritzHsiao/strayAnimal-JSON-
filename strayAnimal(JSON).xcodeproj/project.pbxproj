@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F375EAB1FF0E9BE00F8CCD7 /* sectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F375EAA1FF0E9BE00F8CCD7 /* sectionName.swift */; };
 		1F3973881FDBDFCC0008ED62 /* detailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3973871FDBDFCC0008ED62 /* detailVC.swift */; };
 		1F6AEE4D1FD935BC003FE6E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6AEE4C1FD935BC003FE6E3 /* AppDelegate.swift */; };
 		1F6AEE521FD935BC003FE6E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6AEE501FD935BC003FE6E3 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F375EAA1FF0E9BE00F8CCD7 /* sectionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sectionName.swift; sourceTree = "<group>"; };
 		1F3973871FDBDFCC0008ED62 /* detailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailVC.swift; sourceTree = "<group>"; };
 		1F6AEE491FD935BC003FE6E3 /* strayAnimal(JSON).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "strayAnimal(JSON).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6AEE4C1FD935BC003FE6E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				1F6AEE4C1FD935BC003FE6E3 /* AppDelegate.swift */,
 				1F6AEE7D1FD94358003FE6E3 /* animal.swift */,
+				1F375EAA1FF0E9BE00F8CCD7 /* sectionName.swift */,
 				1F9550C61FDA493B007016E5 /* mainvc.swift */,
 				1F3973871FDBDFCC0008ED62 /* detailVC.swift */,
 				1F6AEE501FD935BC003FE6E3 /* Main.storyboard */,
@@ -272,6 +275,7 @@
 				1F6AEE551FD935BC003FE6E3 /* strayAnimal_JSON_.xcdatamodeld in Sources */,
 				1F6AEE4D1FD935BC003FE6E3 /* AppDelegate.swift in Sources */,
 				1F9550C71FDA493B007016E5 /* mainvc.swift in Sources */,
+				1F375EAB1FF0E9BE00F8CCD7 /* sectionName.swift in Sources */,
 				1F3973881FDBDFCC0008ED62 /* detailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
